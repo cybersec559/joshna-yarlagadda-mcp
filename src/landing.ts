@@ -77,7 +77,7 @@ export function landingPage(): Response {
     </table>
     <p>Live MCP (use this today): <a href="https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"><code>https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></a>. Authentication: none.</p>
     <h2 style="font-size:1.05rem;margin:1.75rem 0 0.4rem">AI client setup</h2>
-    <p>Full manual for Cursor, Claude, VS Code, Windsurf, Cline, Continue, Codex, Gemini, ChatGPT, Inspector, and stdio-only hosts: <a href="https://github.com/cybersec559/joshna-yarlagadda-mcp/blob/main/SETUP.md">SETUP.md</a>.</p>
+    <p>Full manual for Cursor, Claude, VS Code, Windsurf, Cline, Continue, Codex, Gemini, ChatGPT, Inspector, and stdio-only hosts: <a href="https://github.com/cybersec559/joshna-yarlagadda-mcp/blob/main/SETUP.md">SETUP.md</a>. Architecture: <a href="https://github.com/cybersec559/joshna-yarlagadda-mcp/blob/main/ARCHITECTURE.md">ARCHITECTURE.md</a>.</p>
     <p><strong>Claude (quick):</strong> Customize → Connectors → Add custom connector → URL above → Authentication <strong>None</strong> → enable under chat “+”.</p>
     <p><strong>Claude Code:</strong> <code>claude mcp add --transport http joshna-yarlagadda https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></p>
     <p><strong>Cursor (quick):</strong> Settings → MCP → add URL <code>…/mcp</code>, or copy <code>examples/cursor.mcp.json</code>.</p>

@@ -126,6 +126,7 @@ describe("public catalog fixtures", () => {
       "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
     );
     assert.match(MCP_OFFERING.living_example.setup_manual, /SETUP\.md/);
+    assert.match(MCP_OFFERING.living_example.architecture, /ARCHITECTURE\.md/);
     assert.equal(MCP_OFFERING.claude.authentication, "none");
     assert.equal(
       MCP_OFFERING.claude.url,

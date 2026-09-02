@@ -24,7 +24,8 @@ Built as a Cloudflare Worker with **McpAgent** (agents SDK), `server.tool()` + Z
 
 GET `/` is a short human page. Assistants must use `/mcp` (Streamable HTTP). `/sse` remains for older Inspector clients.
 
-**Client setup (Cursor, Claude, VS Code, Windsurf, Cline, Continue, Codex, Gemini, ChatGPT, Inspector):** see **[SETUP.md](SETUP.md)**.
+**Client setup:** [SETUP.md](SETUP.md)  
+**Architecture:** [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ## Local
 
@@ -93,6 +94,7 @@ src/data.ts      Static public catalog
 src/clients.ts   Live URL + Claude Origin allowlist
 src/landing.ts   GET /
 SETUP.md         AI client setup manual
+ARCHITECTURE.md  Runtime, tools, data, deploy topology
 examples/        Copy-paste configs per client
 .mcp.json        Claude Code project attach
 wrangler.toml    DO binding + commented custom-domain route

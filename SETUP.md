@@ -1,5 +1,7 @@
 # Joshna Yarlagadda MCP — AI client setup manual
 
+How the Worker is built: [ARCHITECTURE.md](ARCHITECTURE.md).
+
 Attach any MCP-capable assistant to the public, **authless** professional server.
 
 | | |
