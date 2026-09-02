@@ -1,0 +1,17 @@
+{
+  "name": "joshna-yarlagadda-mcp",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "wrangler-dev",
+      "command": "npm start",
+      "description": "Cloudflare Worker dev server (wrangler dev) serving the MCP endpoint at http://localhost:8788/mcp and the human landing page at http://localhost:8788/."
+    }
+  ],
+  "ports": [
+    {
+      "name": "wrangler-dev",
+      "port": 8788
+    }
+  ]
+}
