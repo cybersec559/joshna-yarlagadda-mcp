@@ -76,11 +76,11 @@ export function landingPage(): Response {
       <tbody>${rows}</tbody>
     </table>
     <p>Live MCP (use this today): <a href="https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"><code>https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></a>. Authentication: none.</p>
-    <h2 style="font-size:1.05rem;margin:1.75rem 0 0.4rem">Claude</h2>
-    <p><strong>claude.ai / Claude Desktop / mobile:</strong> Customize → Connectors → Add custom connector. Name <code>Joshna Yarlagadda</code> (ASCII). URL = the live <code>/mcp</code>. Authentication: <strong>None</strong>. Then enable it from the chat “+” → Connectors menu.</p>
+    <h2 style="font-size:1.05rem;margin:1.75rem 0 0.4rem">AI client setup</h2>
+    <p>Full manual for Cursor, Claude, VS Code, Windsurf, Cline, Continue, Codex, Gemini, ChatGPT, Inspector, and stdio-only hosts: <a href="https://github.com/cybersec559/joshna-yarlagadda-mcp/blob/main/SETUP.md">SETUP.md</a>.</p>
+    <p><strong>Claude (quick):</strong> Customize → Connectors → Add custom connector → URL above → Authentication <strong>None</strong> → enable under chat “+”.</p>
     <p><strong>Claude Code:</strong> <code>claude mcp add --transport http joshna-yarlagadda https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></p>
-    <p><strong>Claude Desktop (local stdio):</strong> Settings → Developer → Edit Config, add the <code>mcp-remote</code> block from the README, restart Claude.</p>
-    <p>Inspector: <code>npx @modelcontextprotocol/inspector@latest</code> → Streamable HTTP → live <code>/mcp</code> (or <code>http://localhost:8788/mcp</code> locally).</p>
+    <p><strong>Cursor (quick):</strong> Settings → MCP → add URL <code>…/mcp</code>, or copy <code>examples/cursor.mcp.json</code>.</p>
   </main>
 </body>
 </html>`;

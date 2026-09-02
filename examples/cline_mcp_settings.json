@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "joshna-yarlagadda": {
+      "url": "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

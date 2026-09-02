@@ -24,6 +24,8 @@ Built as a Cloudflare Worker with **McpAgent** (agents SDK), `server.tool()` + Z
 
 GET `/` is a short human page. Assistants must use `/mcp` (Streamable HTTP). `/sse` remains for older Inspector clients.
 
+**Client setup (Cursor, Claude, VS Code, Windsurf, Cline, Continue, Codex, Gemini, ChatGPT, Inspector):** see **[SETUP.md](SETUP.md)**.
+
 ## Local
 
 ```bash
@@ -45,122 +47,11 @@ Against a running `npm start`:
 npm run smoke
 ```
 
-## Inspector
+## Attach an AI client
 
-```bash
-npx @modelcontextprotocol/inspector@latest
-```
+Step-by-step for every supported assistant is in **[SETUP.md](SETUP.md)** (Cursor, Claude.ai / Desktop / Code / API, VS Code Copilot, Windsurf, Cline, Continue, Codex CLI, Gemini CLI, ChatGPT connectors, Cloudflare Playground, Inspector, and any stdio-only host via `mcp-remote`).
 
-1. Transport: **Streamable HTTP**
-2. URL: `http://localhost:8788/mcp`
-3. Connect → **List Tools** — you should see the eight `verb_noun` tools above
-4. Call `get_profile`, then `get_mcp_offering`
-
-If a client only speaks SSE, use `http://localhost:8788/sse`.
-
-### Cursor
-
-```json
-{
-  "mcpServers": {
-    "joshna-yarlagadda": {
-      "url": "https://joshnayarlagadda.com/mcp"
-    }
-  }
-}
-```
-
-Local-only clients can wrap the remote URL with [`mcp-remote`](https://www.npmjs.com/package/mcp-remote):
-
-```json
-{
-  "mcpServers": {
-    "joshna-yarlagadda": {
-      "command": "npx",
-      "args": ["mcp-remote", "https://joshnayarlagadda.com/mcp"]
-    }
-  }
-}
-```
-
-Cloudflare AI Playground: paste the `/mcp` URL.
-
-## Claude
-
-This server is public and **authless**. Claude users should attach the live HTTPS endpoint (custom-domain `joshnayarlagadda.com/mcp` is a later DNS step):
-
-**https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp**
-
-Authentication: **None**. Do not configure OAuth.
-
-### claude.ai, Claude Desktop, Cowork, mobile
-
-Claude’s custom connectors call this URL from Anthropic’s cloud (not from localhost).
-
-1. **Free / Pro / Max:** Customize → Connectors → **Add custom connector**
-2. **Team / Enterprise (Owner):** Organization settings → Connectors → Add → Custom → Web
-3. Name: `Joshna Yarlagadda` (ASCII only — avoid spaces-as-needed is fine; skip umlauts)
-4. Remote MCP server URL: `https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp`
-5. Authentication: **None** (leave OAuth client id/secret empty)
-6. Add, then in a chat open **+ → Connectors** and enable it
-
-Members on Team/Enterprise click **Connect** after an Owner adds it.
-
-### Claude Desktop (local process)
-
-Settings → Developer → Edit Config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS, `%APPDATA%\Claude\claude_desktop_config.json` on Windows):
-
-```json
-{
-  "mcpServers": {
-    "joshna-yarlagadda": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"
-      ]
-    }
-  }
-}
-```
-
-Restart Claude Desktop. Prefer the Connectors UI above if your build supports remote MCP natively.
-
-### Claude Code
-
-```bash
-claude mcp add --transport http joshna-yarlagadda https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp
-```
-
-Or a project `.mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "joshna-yarlagadda": {
-      "type": "http",
-      "url": "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"
-    }
-  }
-}
-```
-
-### Claude API
-
-```json
-{
-  "mcp_servers": [
-    {
-      "type": "url",
-      "url": "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
-      "name": "joshna-yarlagadda"
-    }
-  ]
-}
-```
-
-Use Anthropic’s current Messages API MCP beta header for your SDK version. No bearer token is required.
+Live URL: `https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp` — Authentication: **None**.
 
 ## Deploy
 
@@ -201,7 +92,8 @@ src/tools.ts     server.tool() registrations (Zod)
 src/data.ts      Static public catalog
 src/clients.ts   Live URL + Claude Origin allowlist
 src/landing.ts   GET /
-examples/        Claude Desktop config snippet
+SETUP.md         AI client setup manual
+examples/        Copy-paste configs per client
 .mcp.json        Claude Code project attach
 wrangler.toml    DO binding + commented custom-domain route
 test/            Catalog + registration fixtures

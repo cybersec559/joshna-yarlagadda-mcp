@@ -292,6 +292,8 @@ export const MCP_OFFERING = {
     live: "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
     local: "http://localhost:8788/mcp",
     note: "This Worker is the working example — an authless public MCP because the underlying site data is already public. Client product MCPs usually add two-layer auth.",
+    setup_manual:
+      "https://github.com/cybersec559/joshna-yarlagadda-mcp/blob/main/SETUP.md",
   },
   claude: {
     authentication: "none",
