@@ -289,8 +289,19 @@ export const MCP_OFFERING = {
   name: "Build an MCP for your product",
   living_example: {
     url: "https://joshnayarlagadda.com/mcp",
+    live: "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
     local: "http://localhost:8788/mcp",
     note: "This Worker is the working example — an authless public MCP because the underlying site data is already public. Client product MCPs usually add two-layer auth.",
+  },
+  claude: {
+    authentication: "none",
+    url: "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
+    claude_ai:
+      "Customize → Connectors → Add custom connector. Name: Joshna Yarlagadda. URL: the live /mcp. Authentication: None. Enable the connector in the chat + menu.",
+    claude_desktop:
+      "Settings → Connectors → Add custom connector with the same URL, or paste the mcp-remote block into claude_desktop_config.json and restart.",
+    claude_code:
+      "claude mcp add --transport http joshna-yarlagadda https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
   },
   what_it_means:
     "Wrap a client product API as a remote Model Context Protocol server on Cloudflare Workers so assistants (Cursor, Claude, and others) can call real, task-shaped tools instead of scraping docs.",

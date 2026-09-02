@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "joshna-yarlagadda": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"
+      ]
+    }
+  }
+}

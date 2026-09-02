@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "joshna-yarlagadda": {
+      "type": "http",
+      "url": "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"
+    }
+  }
+}

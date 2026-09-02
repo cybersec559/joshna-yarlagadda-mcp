@@ -75,7 +75,12 @@ export function landingPage(): Response {
       <thead><tr><th>Tool</th><th>Returns</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
-    <p>Inspector: <code>npx @modelcontextprotocol/inspector@latest</code> → connect to <code>http://localhost:8788/mcp</code> (or the deployed <code>/mcp</code> URL).</p>
+    <p>Live MCP (use this today): <a href="https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp"><code>https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></a>. Authentication: none.</p>
+    <h2 style="font-size:1.05rem;margin:1.75rem 0 0.4rem">Claude</h2>
+    <p><strong>claude.ai / Claude Desktop / mobile:</strong> Customize → Connectors → Add custom connector. Name <code>Joshna Yarlagadda</code> (ASCII). URL = the live <code>/mcp</code>. Authentication: <strong>None</strong>. Then enable it from the chat “+” → Connectors menu.</p>
+    <p><strong>Claude Code:</strong> <code>claude mcp add --transport http joshna-yarlagadda https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp</code></p>
+    <p><strong>Claude Desktop (local stdio):</strong> Settings → Developer → Edit Config, add the <code>mcp-remote</code> block from the README, restart Claude.</p>
+    <p>Inspector: <code>npx @modelcontextprotocol/inspector@latest</code> → Streamable HTTP → live <code>/mcp</code> (or <code>http://localhost:8788/mcp</code> locally).</p>
   </main>
 </body>
 </html>`;

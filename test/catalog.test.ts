@@ -121,6 +121,15 @@ describe("public catalog fixtures", () => {
 
   it("describes the MCP offering and points at this same /mcp", () => {
     assert.equal(MCP_OFFERING.living_example.url, "https://joshnayarlagadda.com/mcp");
+    assert.equal(
+      MCP_OFFERING.living_example.live,
+      "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
+    );
+    assert.equal(MCP_OFFERING.claude.authentication, "none");
+    assert.equal(
+      MCP_OFFERING.claude.url,
+      "https://joshna-yarlagadda-mcp.bhaskar-itm.workers.dev/mcp",
+    );
     const phaseIds = MCP_OFFERING.phases.map((phase) => phase.id);
     assert.deepEqual(phaseIds, [
       "intake",
