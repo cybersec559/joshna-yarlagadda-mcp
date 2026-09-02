@@ -1,0 +1,27 @@
+{
+  "name": "joshna-yarlagadda-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public, authless remote MCP server for Joshna Yarlagadda — served at /mcp on Cloudflare Workers.",
+  "scripts": {
+    "start": "wrangler dev --port 8788 --ip 0.0.0.0",
+    "dev": "wrangler dev --port 8788 --ip 0.0.0.0",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "cf-typegen": "wrangler types",
+    "test": "tsx --test test/**/*.test.ts",
+    "smoke": "tsx scripts/smoke-mcp.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "agents": "^0.20.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260902.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.105.0"
+  }
+}
