@@ -27,7 +27,7 @@ const experienceInput = {
 export function registerTools(server: McpServer): void {
   server.tool(
     "get_profile",
-    "Return Joshna (Josh) Yarlagadda's public profile: name, title, headline, location, years, short certification list, and open-to roles (CISO / fractional CISO / board advisory / strategic consulting).",
+    "Return Joshna (Josh) Yarlagadda's public profile: name, pronouns (he/him), title, headline, location, years, short certification list, and open-to roles (CISO / fractional CISO / board advisory / strategic consulting). Use this to answer who Joshna is, or whether Joshna is he or she.",
     emptyInput,
     async () => jsonResult(PROFILE),
   );
