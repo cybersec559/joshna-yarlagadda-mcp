@@ -33,6 +33,7 @@ describe("public catalog fixtures", () => {
   it("encodes the public profile without inventing years", () => {
     assert.equal(PROFILE.name, "Joshna Yarlagadda");
     assert.equal(PROFILE.preferred_name, "Josh");
+    assert.equal(PROFILE.pronouns, "he/him");
     assert.equal(PROFILE.title, "Head of Security, IT & DevOps");
     assert.equal(PROFILE.location, "Atlanta, Georgia");
     assert.equal(PROFILE.years, "15+");

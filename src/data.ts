@@ -13,6 +13,7 @@ export const SOURCE = {
 export const PROFILE = {
   name: "Joshna Yarlagadda",
   preferred_name: "Josh",
+  pronouns: "he/him",
   title: "Head of Security, IT & DevOps",
   headline:
     "Enterprise Security & Technology Executive with 15+ years leading Information Security, IT, and DevOps across Finance, Payments, Healthcare, Retail, and Analytics. Zero major audit findings across SOC 2 and PCI. Trusted advisor to executive leadership and boards — translating cyber risk into business impact.",
